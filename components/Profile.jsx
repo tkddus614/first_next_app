@@ -9,7 +9,6 @@ const style = css`
     }
     .profile-image-wrapper {
         width: 100%;
-        border: 1px solid #e1e4e8;
     }
     .profile-image-wrapper .profile image {
         display: block;
@@ -51,28 +50,31 @@ const Profile = ({ user }) => {
                         className="profile-image"
                         src={user.avatar_url}
                         alt={`${user.name} 프로필 이미지`}
+                        width="100%"
                     />
                 </div>
+                <h2 className="profile-username">{user.name}</h2>
+                <p className="profile-user-login">{user.login}</p>
+                <p className="profile-user-bio">{user.bio}</p>
+                <p className="profile-user-info">
+                    <GoOrganization size={16} color="#6a737d" />
+                    <span className="profile-user-info-text">{user.email}</span>
+                </p>
+                <p className="profile-user-info">
+                    <GoLocation size={16} color="#6a737d" />
+                    <span className="profile-user-info-text">
+                        {user.location}
+                    </span>
+                </p>
+                <p className="profile-user-info">
+                    <GoMail size={16} color="#6a737d" />
+                    <span className="profile-user-info-text">{user.email}</span>
+                </p>
+                <p className="profile-user-info">
+                    <GoLink size={16} color="#6a737d" />
+                    <span className="profile-user-info-text">{user.email}</span>
+                </p>
             </div>
-            <h2 className="profile-username">{user.name}</h2>
-            <p className="profile-user-login">{user.login}</p>
-            <p className="profile-user-bio">{user.bio}</p>
-            <p className="profile-user-info">
-                <GoOrganization size={16} color="#6a737d" />
-                <span className="profile-user-info-text">{user.email}</span>
-            </p>
-            <p className="profile-user-info">
-                <GoLocation size={16} color="#6a737d" />
-                <span className="profile-user-info-text">{user.location}</span>
-            </p>
-            <p className="profile-user-info">
-                <GoMail size={16} color="#6a737d" />
-                <span className="profile-user-info-text">{user.email}</span>
-            </p>
-            <p className="profile-user-info">
-                <GoLink size={16} color="#6a737d" />
-                <span className="profile-user-info-text">{user.email}</span>
-            </p>
             <style jsx>{style}</style>
         </>
     );
